@@ -10,36 +10,8 @@ namespace ACM.BL {
         }
         public int ProductId { get; private set; }
         public string ProductName { get; set; }
-        public string Description { get; set; }
+        public string ProductDescription { get; set; }
         public decimal? CurrentPrice { get; set; }
-
-        /// <summary>
-        /// Retrieve one product
-        /// </summary>
-        /// <param name="productId"></param>
-        /// <returns></returns>
-        public Product Retrieve(int productId) {
-            // Code that retrieves the defined product
-            return new Product();
-        }
-
-        /// <summary>
-        /// Retrieve all products
-        /// </summary>
-        /// <returns></returns>
-        public List<Product> Retrieve() {
-            // Code that retrieves all of the products
-            return new List<Product>();
-        }
-
-        /// <summary>
-        /// Saves the current product
-        /// </summary>
-        /// <returns></returns>
-        public bool Save() {
-            // Code that saves the defined product
-            return true;
-        }
 
         /// <summary>
         /// Validates the product data

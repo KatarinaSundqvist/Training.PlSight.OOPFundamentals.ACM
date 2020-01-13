@@ -1,0 +1,36 @@
+﻿namespace ACM.BL {
+    public class ProductRepository {
+
+        /// <summary>
+        /// Retrieve one product
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <returns></returns>
+        public Product Retrieve(int productId) {
+            // Create the instance of the Product class
+            // Pass in the requested ID
+            Product product = new Product(productId);
+
+            // Code that retrieves the defined product
+
+            // Temporary hard-coded values to return
+            // a populated product
+            if (productId == 2) {
+                product.ProductName = "Ring";
+                product.ProductDescription = "One ring to rule them all";
+                product.CurrentPrice = 25000m;
+            }
+            return product;
+        }
+
+        /// <summary>
+        /// Saves the current product
+        /// </summary>
+        /// <param name="product"></param>
+        /// <returns></returns>
+        public bool Save(Product product) {
+            // Code that saves the passed in product
+            return true;
+        }
+    }
+}

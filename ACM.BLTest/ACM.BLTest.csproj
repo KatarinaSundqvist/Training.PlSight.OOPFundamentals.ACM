@@ -54,6 +54,9 @@
     <Compile Include="ProductTest.cs" />
     <Compile Include="OrderTest.cs" />
     <Compile Include="OrderItemTest.cs" />
+    <Compile Include="CustomerRepositoryTest.cs" />
+    <Compile Include="ProductRepositoryTest.cs" />
+    <Compile Include="OrderRepositoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
