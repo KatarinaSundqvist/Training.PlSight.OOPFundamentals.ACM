@@ -3,17 +3,18 @@
 namespace ACM.BL {
     public class Customer {
 
-        public Customer() {
-            // default constructor. If this is the only constructor you need, don't include it. It will be created by default (in the background)
-            // However, if you have additional constructors, and need this default one, you must include it
-            // The implicit default constructor is only created if there are no overloads
+        public Customer() : this(0) {
+
         }
 
         public Customer(int customerId) {
             CustomerId = customerId;
+            AddressList = new List<Address>();
         }
 
+        public List<Address> AddressList { get; set; }
         public int CustomerId { get; private set; }
+        public int CustomerType { get; set; }
         public string EmailAddress { get; set; }
         public string FirstName { get; set; }
         public string FullName {

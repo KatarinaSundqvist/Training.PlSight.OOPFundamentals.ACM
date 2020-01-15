@@ -1,7 +1,9 @@
 ﻿namespace ACM.BL {
     public class Address {
         public Address() {
-        
+            // default constructor. If this is the only constructor you need, don't include it. It will be created by default (in the background)
+            // However, if you have additional constructors, and need this default one, you must include it
+            // The implicit default constructor is only created if there are no overloads
         }
         public Address(int addressId) {
             AddressId = addressId;
