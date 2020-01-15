@@ -1,5 +1,5 @@
 ﻿namespace ACM.BL {
-    public class Address {
+    public class Address : EntityBase {
         public Address() {
             // default constructor. If this is the only constructor you need, don't include it. It will be created by default (in the background)
             // However, if you have additional constructors, and need this default one, you must include it
@@ -22,7 +22,7 @@
         /// Validates the address data
         /// </summary>
         /// <returns></returns>
-        public bool Validate() {
+        public override bool Validate() {
             var isValid = true;
             if (PostalCode == null) isValid = false;
 

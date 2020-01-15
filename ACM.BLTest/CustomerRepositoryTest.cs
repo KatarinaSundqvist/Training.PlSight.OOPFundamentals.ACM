@@ -73,5 +73,78 @@ namespace ACM.BLTest {
                 Assert.AreEqual(expected.AddressList[i].PostalCode, actual.AddressList[i].PostalCode);
             }
         }
+
+        [TestMethod()]
+        public void SaveTestValid() {
+            // Arrange
+            var customerRepository = new CustomerRepository();
+            var updatedCustomer = new Customer(1) {
+                EmailAddress = "fbaggins@hobbiton.me",
+                FirstName = "Frodo",
+                LastName = "Baggins",
+                HasChanges=true,
+                AddressList = new List<Address>() {
+                    new Address() {
+                        AddressType = 1,
+                        StreetLine1 = "2 Bag End",
+                        StreetLine2 = "Bagshot row",
+                        City = "Hobbiton",
+                        State = "Shire",
+                        Country = "Middle Earth",
+                        PostalCode = "144"
+                    },
+                    new Address() {
+                        AddressType = 2,
+                        StreetLine1 = "Green Dragon",
+                        City = "Bywater",
+                        State = "Shire",
+                        Country = "Middle Earth",
+                        PostalCode = "146"
+                    }
+                }
+            };
+
+            // Act
+            var actual = customerRepository.Save(updatedCustomer);
+
+            // Assert
+            Assert.AreEqual(true, actual);
+        }
+
+        [TestMethod()]
+        public void SaveTestMissingLastName() {
+            // Arrange
+            var customerRepository = new CustomerRepository();
+            var updatedCustomer = new Customer(1) {
+                EmailAddress = "fbaggins@hobbiton.me",
+                FirstName = "Frodo",
+                HasChanges = true,
+                AddressList = new List<Address>() {
+                    new Address() {
+                        AddressType = 1,
+                        StreetLine1 = "2 Bag End",
+                        StreetLine2 = "Bagshot row",
+                        City = "Hobbiton",
+                        State = "Shire",
+                        Country = "Middle Earth",
+                        PostalCode = "144"
+                    },
+                    new Address() {
+                        AddressType = 2,
+                        StreetLine1 = "Green Dragon",
+                        City = "Bywater",
+                        State = "Shire",
+                        Country = "Middle Earth",
+                        PostalCode = "146"
+                    }
+                }
+            };
+
+            // Act
+            var actual = customerRepository.Save(updatedCustomer);
+
+            // Assert
+            Assert.AreEqual(false, actual);
+        }
     }
 }

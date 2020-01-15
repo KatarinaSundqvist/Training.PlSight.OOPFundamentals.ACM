@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 namespace ACM.BL {
-    public class OrderItem {
+    public class OrderItem : EntityBase {
         public OrderItem() {
 
         }
@@ -46,7 +46,7 @@ namespace ACM.BL {
         /// Validates the product data
         /// </summary>
         /// <returns></returns>
-        public bool Validate() {
+        public override bool Validate() {
             var isValid = true;
 
             if (string.IsNullOrEmpty(Product)) isValid = false;
